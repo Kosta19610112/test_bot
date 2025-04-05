@@ -10,5 +10,5 @@ services:
       - key: BOT_TOKEN
         value: 7649841006:AAH9H1G18v6X_nMYZ_7IeaVK1TDyP9m_7nw
       - key: WEBHOOK_URL
-        value: https://telebot-gpg6.onrender.com
+        value: https://test-bot-sit4.onrender.com
 
