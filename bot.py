@@ -28,15 +28,19 @@ async def webhook():
 async def start(update: Update, context: CallbackContext):
     await update.message.reply_text("Hello!")
 
+# Обработчик команды /w (заглушка)
+async def w_command(update: Update, context: CallbackContext):
+    await update.message.reply_text("Это заглушка для команды /w")
+
 # Установка вебхука
 async def set_webhook():
     WEBHOOK_URL = f"https://test-bot-klq6.onrender.com/{BOT_TOKEN}"
     await application.bot.set_webhook(WEBHOOK_URL)
 
-
 if __name__ == "__main__":
-    # Регистрируем обработчик команды /start
+    # Регистрируем обработчики команд
     application.add_handler(CommandHandler("start", start))
+    application.add_handler(CommandHandler("w", w_command))  # Добавляем обработчик для /w
 
     # Устанавливаем webhook
     asyncio.run(set_webhook())
