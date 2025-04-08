@@ -30,7 +30,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Установка вебхука
 async def set_webhook():
-    WEBHOOK_URL = f"https://your-render-app-url.onrender.com/{BOT_TOKEN}"
+    WEBHOOK_URL = f"https://test-bot-klq6.onrender.com/{BOT_TOKEN}"
     await application.bot.set_webhook(WEBHOOK_URL)
 
 if __name__ == "__main__":
