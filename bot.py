@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from flask import Flask, request
 from telegram import Update
-from telegram.ext import Application, CommandHandler, ContextTypes
+from telegram.ext import Application, CommandHandler, CallbackContext
 import asyncio
 
 # Загружаем переменные окружения
@@ -25,13 +25,14 @@ async def webhook():
     return "ok"
 
 # Обработчик команды /start
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def start(update: Update, context: CallbackContext):
     await update.message.reply_text("Hello!")
 
 # Установка вебхука
 async def set_webhook():
     WEBHOOK_URL = f"https://test-bot-klq6.onrender.com/{BOT_TOKEN}"
     await application.bot.set_webhook(WEBHOOK_URL)
+
 
 if __name__ == "__main__":
     # Регистрируем обработчик команды /start
