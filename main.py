@@ -65,6 +65,10 @@ def get_local_time(city_timezone):
 
 # ========== ХЕНДЛЕРЫ ==========
 
+@app.route('/')
+def index():
+    return "Привет! Это мой Telegram-бот. Он работает на Render."
+
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.reply_to(message, "Привет! Я могу показать текущее время, температуру и прогноз погоды в разных городах. Напишите /w.")
