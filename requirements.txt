@@ -1,4 +1,2 @@
-python-telegram-bot==20.0a0
-flask
-python-dotenv
-flask[async]
+Flask==2.0.1
+requests==2.25.1
